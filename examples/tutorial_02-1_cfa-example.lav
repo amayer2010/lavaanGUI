@@ -1,0 +1,7 @@
+## lavaan Tutorial 02-1: A CFA example
+## Dataset: HolzingerSwineford1939
+## Workhorse Function: cfa()
+
+visual =~ x1 + x2 + x3
+textual =~ x4 + x5 + x6
+speed =~ x7 + x8 + x9

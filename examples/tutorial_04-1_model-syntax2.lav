@@ -1,0 +1,16 @@
+## lavaan Tutorial 04-1: Model syntax 2
+## Dataset: HolzingerSwineford1939
+## Workhorse Function: sem() or cfa()
+
+# three-factor model
+visual =~ x1 + x2 + x3
+textual =~ x4 + x5 + x6
+speed   =~ NA*x7 + x8 + x9
+
+# orthogonal factors
+visual ~~ 0*speed
+textual ~~ 0*speed
+
+# fix variance of speed factor
+speed ~~ 1*speed
+	

@@ -1,0 +1,14 @@
+tests
+examples
+old
+private
+inst/elrshiny/shinyapps
+inst/elrshiny/rsconnect
+.Rhistory
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.git
+.gitignore
+.gitattributes
+TODO.txt
+README.md

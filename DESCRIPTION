@@ -1,0 +1,28 @@
+Package: lavaanGUI
+Version: 0.1-1.000
+Date: 2017-04-15
+Title: Graphical User Interface for lavaan
+Authors@R: c(person("Axel", "Mayer", role=c("aut","cre"),
+	email="amayer2010@gmail.com"))
+Author: Axel Mayer [aut, cre]
+Maintainer: Axel Mayer <amayer2010@gmail.com>
+Description: Graphical User Interface for lavaan.
+Depends:
+    R (>= 3.1.0),
+	lavaan (>= 0.5-20)	
+Imports:
+    methods,
+    shiny (>= 0.11),
+	semPlot,
+	shinyAce,
+	EffectLiteR,
+    foreign,
+    ggplot2,
+    nnet,
+    survey,
+    lavaan.survey,
+    car
+License: GPL (>= 2)
+URL: https://github.com/amayer2010/lavaanGUI
+LazyData: yes
+RoxygenNote: 5.0.1

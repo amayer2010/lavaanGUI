@@ -1,0 +1,21 @@
+## lavaan Tutorial 01-1: Model syntax 1 (slightly modified) 
+## Dataset: PoliticalDemocracy
+
+# regressions
+y1 + y2 ~ f1 + f2 + x1 + x2
+f1 ~ f2 + f3
+f2 ~ f3 + x1 + x2
+
+# latent variable definitions 
+f1 =~ y1 + y2 + y3 
+f2 =~ y4 + y5 + y6 
+f3 =~ y7 + y8
+
+# variances and covariances 
+y1 ~~ y1 
+y1 ~~ y2 
+f1 ~~ f2
+
+# intercepts 
+y1 ~ 1 
+f1 ~ 1
