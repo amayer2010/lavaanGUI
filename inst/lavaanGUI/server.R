@@ -39,7 +39,7 @@ shinyServer(function(input, output, session) {
     
     if(!is.null(inFile)){
       
-      return(elrReadData(file=inFile$datapath,
+      return(EffectLiteR::elrReadData(file=inFile$datapath,
                          name=inFile$name,
                          header=input$header,
                          sep=input$sep,
@@ -383,6 +383,39 @@ shinyServer(function(input, output, session) {
     }
     
   })
+  
+  
+  ###### Output Factor Scores Table #########
+  output$fscores = renderDataTable({
+      m1 <- m1()
+      fs <- data.frame(lavPredict(m1, method=input$fsmethod))
+      if(input$addytofs){
+        ydata <- data.frame(lavInspect(m1, "data"))
+        names(ydata) <- lavNames(m1)
+        fs <- cbind(ydata,fs)
+      }
+      fsprint <- format(fs, digits=3)
+      fsprint
+  })
+  
+  ###### Download Data (Factor Scores Table) #######
+  output$downloadFScores <- downloadHandler(
+    filename = function() {
+      paste('FactorScores-', Sys.Date(), '.txt', sep='')
+    },
+    content = function(con) {
+      m1 <- m1()
+      fs <- data.frame(lavPredict(m1, method=input$fsmethod))
+      if(input$addytofs){
+        ydata <- data.frame(lavInspect(m1, "data"))
+        names(ydata) <- lavNames(m1)
+        fs <- cbind(ydata,fs)
+      }
+      write.table(fs, con, row.names=F, col.names=T, 
+                  quote=F)
+    }
+  )
+  
   
   
   ###### Output Wald Test #########

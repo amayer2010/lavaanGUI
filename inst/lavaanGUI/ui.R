@@ -183,6 +183,20 @@ shinyUI(fluidPage(
               br()
               
      ),
+     ########## lavPredict Input #############
+     tabPanel('lavPredict',
+              br(),
+              selectizeInput("fsmethod", "Factor Score Method", "", 
+                             multiple=FALSE, selected="EBM",
+                             choices=c("EBM",
+                                       "Bartlett",
+                                       "regression"
+                             )),
+              checkboxInput("addytofs","Add observed variables to factor scores table",
+                            value=TRUE),
+              br()
+              
+     ),
      ########## Additional #############
       tabPanel('Additional',
         checkboxInput("meanstructure", "meanstructure", TRUE),
@@ -227,6 +241,15 @@ shinyUI(fluidPage(
       
       ######### lavInspect ##########
       tabPanel("lavInspect", verbatimTextOutput("lavinspect")),
+      
+      ######### Factor Scores ##########
+      tabPanel('Factor Scores', 
+               downloadLink('downloadFScores', 
+                            'Download Factor Scores Data'),
+               br(),
+               br(),
+               dataTableOutput("fscores")),
+      
       
       ######### User Specified Tests ##########
       tabPanel("Wald Test", verbatimTextOutput("waldtest")),
