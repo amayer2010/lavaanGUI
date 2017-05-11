@@ -1,5 +1,5 @@
 Package: lavaanGUI
-Version: 0.1-1.002
+Version: 0.1-1.003
 Date: 2017-04-15
 Title: Graphical User Interface for lavaan
 Authors@R: c(person("Axel", "Mayer", role=c("aut","cre"),

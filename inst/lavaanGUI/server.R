@@ -2,6 +2,12 @@
 
 shinyServer(function(input, output, session) {
   
+  ## close app when browser tab is closed
+  session$onSessionEnded(function() { 
+    stopApp() 
+  })
+  
+  
   ####### New analysis / reload button ########
   output$reload <- renderUI({
     if (input$newanalysis > 0) {
