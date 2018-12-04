@@ -9,7 +9,7 @@ Maintainer: Axel Mayer <amayer2010@gmail.com>
 Description: Graphical User Interface for lavaan.
 Depends:
     R (>= 3.1.0),
-	lavaan (>= 0.5-20)	
+	lavaan (>= 0.5-20)
 Imports:
     methods,
     shiny (>= 0.11),
