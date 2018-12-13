@@ -200,8 +200,19 @@ shinyServer(function(input, output, session) {
     ordered <- input$ordered        
     if(input$group==""){group <- NULL}else{group <- input$group}      
     group.label <- input$group.label
-    group.equal <- ifelse(is.null(input$group.equal),"",input$group.equal)
-    group.partial <- ifelse(is.null(input$group.partial),"",input$group.partial)
+
+    if(is.null(input$group.equal)){
+      group.equal <- ""
+    }else{
+      group.equal <- input$group.equal
+    }
+
+    if(is.null(input$group.partial)){
+      group.partial <- ""
+    }else{
+      group.partial <- input$group.partial
+    }
+
     group.w.free <- input$group.w.free    
     estimator <- input$estimator
     se <- input$se
