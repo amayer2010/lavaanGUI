@@ -1,3 +1,4 @@
+library("shinythemes")
 
 shinyUI(fluidPage(
   titlePanel(title="lavaanGUI"),
@@ -259,5 +260,7 @@ shinyUI(fluidPage(
             
     )    
   ))
-
+  , shinythemes::themeSelector() # add a theme selector
+  , theme = shinytheme("darkly") # set default theme as darkly
+  
 ))
